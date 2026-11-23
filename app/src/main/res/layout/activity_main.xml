@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07111F"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F R I D A Y"
+            android:textColor="#62DFFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="18dp"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SYSTEM ONLINE • READY"
+            android:textColor="#8DAFC7"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/orb"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="34dp"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="#B9F4FF"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            android:background="@drawable/orb_background"/>
+
+        <TextView
+            android:id="@+id/replyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:gravity="center"
+            android:text="Hello Hemanth. I'm FRIDAY. Tap the microphone and talk to me."
+            android:textColor="#E5F5FF"
+            android:textSize="17sp"
+            android:lineSpacingExtra="5dp"
+            android:layout_marginTop="28dp"
+            android:padding="12dp"/>
+
+        <Button
+            android:id="@+id/talkButton"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="🎙  TAP TO TALK"
+            android:textAllCaps="false"
+            android:textSize="17sp"
+            android:textColor="#04111D"
+            android:backgroundTint="#62DFFF"
+            android:layout_marginTop="18dp"/>
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type a message to FRIDAY..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#7893A8"
+            android:singleLine="true"
+            android:padding="15dp"
+            android:backgroundTint="#39718C"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Send message"
+            android:textAllCaps="false"
+            android:backgroundTint="#173C56"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QUICK COMMANDS"
+            android:textColor="#62DFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginTop="26dp"/>
+
+        <Button
+            android:id="@+id/timeButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="What time is it?"
+            android:textAllCaps="false"
+            android:backgroundTint="#102B40"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Search the internet"
+            android:textAllCaps="false"
+            android:backgroundTint="#102B40"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FRIDAY ONLINE CONNECTION (HTTPS)"
+            android:textColor="#62DFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginTop="24dp"/>
+
+        <EditText
+            android:id="@+id/backendUrlInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://your-friday-server.example.com"
+            android:inputType="textUri"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#7893A8"
+            android:padding="14dp"
+            android:backgroundTint="#39718C"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/backendTokenInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Private FRIDAY access token"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#7893A8"
+            android:padding="14dp"
+            android:backgroundTint="#39718C"
+            android:layout_marginTop="6dp"/>
+
+        <Button
+            android:id="@+id/saveBackendButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Save online connection"
+            android:textAllCaps="false"
+            android:backgroundTint="#14506A"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/backendHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Online AI: not configured yet. Local commands work without an internet connection."
+            android:textColor="#8DAFC7"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"/>
+    </LinearLayout>
+</ScrollView>
