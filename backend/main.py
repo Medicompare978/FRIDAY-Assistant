@@ -126,8 +126,20 @@ def generate_answer(message: str, language: str, search_context: list, sources: 
         response.raise_for_status()
         data = response.json()
         return data["choices"][0]["message"]["content"].strip()
-    except requests.RequestException:
-        raise HTTPException(status_code=502, detail="FRIDAY's AI answer service is temporarily unavailable. Please try again.")
+   except requests.RequestException as exc:
+       if isinstance(exc, requests.HTTPError) and exc.response is not None:
+           print(
+               "OPENAI ERROR:",
+               exc.response.status_code,
+               exc.response.text[:1000]
+           )
+       else:
+           print("OPENAI CONNECTION ERROR:", repr(exc))
+
+       raise HTTPException(
+           status_code=502,
+           detail="FRIDAY's AI answer service is temporarily unavailable. Please try again."
+       )
     except (KeyError, IndexError, TypeError):
         raise HTTPException(status_code=502, detail="FRIDAY received an unreadable response from the AI service.")
 
