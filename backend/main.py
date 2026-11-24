@@ -68,8 +68,16 @@ def search_web(query: str):
             if url:
                 sources.append(url)
         return context, sources
-    except requests.RequestException:
-        raise HTTPException(status_code=502, detail="FRIDAY could not retrieve current web search results. Please try again.")
+    except requests.RequestException as exc:
+        if isinstance(exc, requests.HTTPError) and exc.response is not None:
+            print("TAVILY ERROR:", exc.response.status_code, exc.response.text[:500])
+        else:
+            print("TAVILY ERROR:", repr(exc))
+
+        raise HTTPException(
+            status_code=502,
+            detail="FRIDAY could not retrieve current web search results."
+        )
 
 
 def generate_answer(message: str, language: str, search_context: list, sources: list) -> str:
